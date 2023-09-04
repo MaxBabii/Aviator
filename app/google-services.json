@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "173939541424",
+    "project_id": "aviator-fa906",
+    "storage_bucket": "aviator-fa906.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:173939541424:android:982352f15fd6d1dbac0275",
+        "android_client_info": {
+          "package_name": "game.xnxnztsoafk.aviator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "173939541424-b4a2o0v8volp0qnp332rgd45djofhhuq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIQBQp4QwKqkEMuztWwY8eG74X2wFJ2s4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "173939541424-b4a2o0v8volp0qnp332rgd45djofhhuq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:173939541424:android:9ed6abfecfba1fd3ac0275",
+        "android_client_info": {
+          "package_name": "game.xnxnztsoafk.testaplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "173939541424-b4a2o0v8volp0qnp332rgd45djofhhuq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIQBQp4QwKqkEMuztWwY8eG74X2wFJ2s4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "173939541424-b4a2o0v8volp0qnp332rgd45djofhhuq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

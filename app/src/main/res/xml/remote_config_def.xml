@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<defaultMap>
+    <entry>
+        <key>main_link</key>
+        <value>https://www.youtube.com/</value>
+    </entry>
+    <entry>
+        <key>policy_link</key>
+        <value>https://www.olx.ua/uk/</value>
+    </entry>
+</defaultMap>
