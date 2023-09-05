@@ -36,6 +36,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.appsflyer.AppsFlyerConversionListener;
+import com.appsflyer.AppsFlyerLib;
+import com.appsflyer.deeplink.DeepLinkListener;
+import com.appsflyer.deeplink.DeepLinkResult;
 import com.onesignal.OneSignal;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -43,12 +47,15 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 public class PlaneActivity extends AppCompatActivity {
     private ImageView plane;
     private int[] imageResources = {R.drawable.back_tab_1_00, R.drawable.back_tab_2_00, R.drawable.back_tab_3_00};
     private static final String ONESIGNAL_APP_ID = "02af555d-79c7-4157-b0c9-7f30b80fbf1d";
+    private static final String APPSFLYER_APP_ID = "9D5VirSgfpkGXYExfkJUgS";
 
     private WebView NAME_WEB_VIEW_SHOW;
     private FirebaseRemoteConfig remoteConfig;
@@ -72,8 +79,26 @@ public class PlaneActivity extends AppCompatActivity {
         plane = findViewById(R.id.plane);
 
         OneSignal.initWithContext(this, ONESIGNAL_APP_ID);
+        AppsFlyerConversionListener conversionListener = new AppsFlyerConversionListener() {
+            @Override
+            public void onConversionDataSuccess(Map<String, Object> conversionData) {
+                // Обробка даних про конверсію
+            }
 
+            @Override
+            public void onConversionDataFail(String errorMessage) {
+            }
 
+            @Override
+            public void onAppOpenAttribution(Map<String, String> attributionData) {
+            }
+
+            @Override
+            public void onAttributionFailure(String errorMessage) {
+            }
+        };
+
+        AppsFlyerLib.getInstance().init(APPSFLYER_APP_ID, conversionListener, getApplicationContext());
         remoteConfig = FirebaseRemoteConfig.getInstance();
         FirebaseRemoteConfigSettings settings = new FirebaseRemoteConfigSettings.Builder()
                 .setMinimumFetchIntervalInSeconds(40)

@@ -2,16 +2,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
     <uses-permission android:name="android.permission.INTERNET"/>
-
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" tools:node="remove"/>
     <application
         android:allowBackup="true"
+        tools:replace="android:fullBackupContent"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
-    android:theme="@style/Theme.TestAplication"
+        android:theme="@style/Theme.TestAplication"
         tools:targetApi="34"
         >
         <activity
@@ -24,14 +26,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
         <activity
+
             android:name=".PlaneActivity"
             android:exported="true"
             android:screenOrientation="portrait">
+<!--            <meta-data-->
+<!--                android:name="com.facebook.sdk.ApplicationId"-->
+<!--                android:value="@string/facebook_app_id" />-->
+
             <intent-filter>
                 <action android:name="android.intent.action.DEFAULT" />
             </intent-filter>
         </activity>
+        <provider android:authorities="com.facebook.app.FacebookContentProvider958437518788671"
+            android:name="com.facebook.FacebookContentProvider"
+            android:exported="true" />
     </application>
 
 </manifest>
