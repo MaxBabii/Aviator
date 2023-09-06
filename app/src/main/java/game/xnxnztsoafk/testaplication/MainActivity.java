@@ -6,6 +6,9 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.core.view.WindowInsetsControllerCompat;
 
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
@@ -168,6 +171,7 @@ public class MainActivity extends AppCompatActivity {
             return false;
         }
     }
+
     private void hideUi() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             WindowInsetsControllerCompat controller = ViewCompat.getWindowInsetsController(getWindow().getDecorView());

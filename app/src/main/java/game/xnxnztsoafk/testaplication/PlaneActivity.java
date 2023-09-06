@@ -1,5 +1,7 @@
 package game.xnxnztsoafk.testaplication;
 
+import static androidx.core.content.PackageManagerCompat.LOG_TAG;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.ViewCompat;
@@ -21,6 +23,7 @@ import android.telephony.PhoneStateListener;
 import android.telephony.ServiceState;
 import android.telephony.TelephonyManager;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
@@ -34,21 +37,17 @@ import android.webkit.WebViewClient;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.appsflyer.AppsFlyerConversionListener;
+import com.appsflyer.attribution.AppsFlyerRequestListener;
+
 import com.appsflyer.AppsFlyerLib;
-import com.appsflyer.deeplink.DeepLinkListener;
-import com.appsflyer.deeplink.DeepLinkResult;
+
 import com.onesignal.OneSignal;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
-
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Random;
 
 public class PlaneActivity extends AppCompatActivity {
@@ -62,8 +61,6 @@ public class PlaneActivity extends AppCompatActivity {
     private PhoneStateListener phoneStateListener;
     private ConnectivityManager.NetworkCallback networkCallback;
     private RotateAnimation rotate;
-    private boolean doubleBackToExitPressedOnce = false;
-    private int screenHeight;
     private boolean isFalling = true;
     private Handler handler = new Handler();
     private Handler handlerForMinusMS = new Handler();
@@ -75,30 +72,25 @@ public class PlaneActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plane);
+        AppsFlyerLib.getInstance().start(getApplicationContext(), APPSFLYER_APP_ID, new AppsFlyerRequestListener() {
+            @Override
+            public void onSuccess() {
+                Log.d("LOG_TAG", "Launch sent successfully, got 200 response code from server");
+            }
 
+            @Override
+            public void onError(int i, @NonNull String s) {
+                Log.d("LOG_TAG", "Launch failed to be sent:\n" +
+                        "Error code: " + i + "\n"
+                        + "Error description: " + s);
+            }
+        });
+        AppsFlyerLib.getInstance().init(APPSFLYER_APP_ID, null, this);
+        AppsFlyerLib.getInstance().start(this);
         plane = findViewById(R.id.plane);
 
         OneSignal.initWithContext(this, ONESIGNAL_APP_ID);
-        AppsFlyerConversionListener conversionListener = new AppsFlyerConversionListener() {
-            @Override
-            public void onConversionDataSuccess(Map<String, Object> conversionData) {
-                // Обробка даних про конверсію
-            }
 
-            @Override
-            public void onConversionDataFail(String errorMessage) {
-            }
-
-            @Override
-            public void onAppOpenAttribution(Map<String, String> attributionData) {
-            }
-
-            @Override
-            public void onAttributionFailure(String errorMessage) {
-            }
-        };
-
-        AppsFlyerLib.getInstance().init(APPSFLYER_APP_ID, conversionListener, getApplicationContext());
         remoteConfig = FirebaseRemoteConfig.getInstance();
         FirebaseRemoteConfigSettings settings = new FirebaseRemoteConfigSettings.Builder()
                 .setMinimumFetchIntervalInSeconds(40)

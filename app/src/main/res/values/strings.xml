@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">Aviator</string>
     <string name="facebook_app_id">958437518788671</string>
+    <string name="fb_login_protocol_scheme">fb958437518788671</string>
+    <string name="facebook_client_token">3c24a098074fab3f8ab25ed24a7a32e3</string>
 </resources>
