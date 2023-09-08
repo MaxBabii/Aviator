@@ -1,62 +1,33 @@
 {
   "project_info": {
-    "project_number": "173939541424",
-    "project_id": "aviator-fa906",
-    "storage_bucket": "aviator-fa906.appspot.com"
+    "project_number": "642087728056",
+    "project_id": "aviatornew-38734",
+    "storage_bucket": "aviatornew-38734.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:173939541424:android:982352f15fd6d1dbac0275",
+        "mobilesdk_app_id": "1:642087728056:android:f0a4855be7fe012f98d54d",
         "android_client_info": {
-          "package_name": "game.xnxnztsoafk.aviator"
+          "package_name": "com.game.aviator"
         }
       },
       "oauth_client": [
         {
-          "client_id": "173939541424-b4a2o0v8volp0qnp332rgd45djofhhuq.apps.googleusercontent.com",
+          "client_id": "642087728056-bo6ruk2mehfm2dil3a5ajs3acovplhe4.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBIQBQp4QwKqkEMuztWwY8eG74X2wFJ2s4"
+          "current_key": "AIzaSyCDk9D4aAUhhy2Zv_Ys1_l8KFw8F3tH9tw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "173939541424-b4a2o0v8volp0qnp332rgd45djofhhuq.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:173939541424:android:9ed6abfecfba1fd3ac0275",
-        "android_client_info": {
-          "package_name": "game.xnxnztsoafk.testaplication"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "173939541424-b4a2o0v8volp0qnp332rgd45djofhhuq.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyBIQBQp4QwKqkEMuztWwY8eG74X2wFJ2s4"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "173939541424-b4a2o0v8volp0qnp332rgd45djofhhuq.apps.googleusercontent.com",
+              "client_id": "642087728056-bo6ruk2mehfm2dil3a5ajs3acovplhe4.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

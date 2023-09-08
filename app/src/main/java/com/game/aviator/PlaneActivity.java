@@ -1,6 +1,4 @@
-package game.xnxnztsoafk.testaplication;
-
-import static androidx.core.content.PackageManagerCompat.LOG_TAG;
+package com.game.aviator;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -53,7 +51,7 @@ import java.util.Random;
 public class PlaneActivity extends AppCompatActivity {
     private ImageView plane;
     private int[] imageResources = {R.drawable.back_tab_1_00, R.drawable.back_tab_2_00, R.drawable.back_tab_3_00};
-    private static final String ONESIGNAL_APP_ID = "02af555d-79c7-4157-b0c9-7f30b80fbf1d";
+    private static final String ONESIGNAL_APP_ID = "d839f57d-d4e9-4462-a523-1726fb5dc464";
     private static final String APPSFLYER_APP_ID = "9D5VirSgfpkGXYExfkJUgS";
 
     private WebView NAME_WEB_VIEW_SHOW;

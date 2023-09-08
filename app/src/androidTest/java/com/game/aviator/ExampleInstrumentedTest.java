@@ -1,4 +1,4 @@
-package game.xnxnztsoafk.testaplication;
+package com.game.aviator;
 
 import android.content.Context;
 
